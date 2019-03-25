@@ -46,8 +46,6 @@ Vue.component('lastminute-table', {
       var month = getDate.slice(2, 5);
       var year = getDate.slice(5, 9);
 
-      //DEBUG //
-       console.log(year);
        return day+' '+month+' '+year;
     },  // end sortTrips_Date
 
@@ -138,12 +136,6 @@ var app = new Vue({
     //Shows the details, hides the list
       this.showDetail = true;
       this.showList = false;
-
-      //DEBUG //
-      //let testDate = new Date.parse();
-      var d = new Date('09MAR2019');
-
-       console.log(d.getFullYear());
 
       //Scroll to top
       document.getElementById('intourApp').scrollIntoView(true);
