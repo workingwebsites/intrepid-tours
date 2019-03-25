@@ -1,0 +1,58 @@
+<script type="text/x-template" id="template-lastminute-table">
+  <table class="table-last-minute">
+    <thead>
+      <tr>
+        <th class="table-last-minute_depart">Departing</th>
+        <th class="table-last-minute_trip">Trip</th>
+        <th class="table-last-minute_days">Days</th>
+        <th class="table-last-minute_destination">Destination</th>
+        <th class="table-last-minute_price">Price</th>
+        <th class="table-last-minute_details"> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="trip in trips">
+        <td class="table-last-minute_depart" v-bind:id="trip.tour.summary.productCode">
+          {{formatDate(trip.tourdetails.summary.startDate)}}
+        </td>
+        <td class="table-last-minute_trip">
+          <div class="table-last-minute_name">
+            {{trip.tour.summary.productName}}
+          </div>
+          <div class="table-last-minute_description" >
+            <span class="table-last-minute_description_text" >{{trip.tour.summary.description | readMore(20, '...')}}</span>
+          </div>
+        </td>
+        <td class="table-last-minute_days">
+          {{trip.tour.summary.duration}}
+        </td>
+        <td class="table-last-minute_destination">
+          <ul class="table-last-minute_countrylist" v-show="trip.tour.countrylist.country.length > 0">
+            <li v-for="country in trip.tour.countrylist.country">
+              {{country.name}}
+            </li>
+          </ul>
+          <ul class="table-last-minute_countrylist" v-show="!trip.tour.countrylist.country.length">
+            <li>
+              {{trip.tour.countrylist.country.name}}
+            </li>
+          </ul>
+        </td>
+        <td class="table-last-minute_price">
+          <div class="price_base">
+            Was: {{formatPrice(trip.tourdetails.pricesList.prices[1].base)}}
+          </div>
+          <div class="price_total">
+            Now: {{formatPrice(trip.tourdetails.pricesList.prices[1].total)}}
+          </div>
+        </td>
+        <td class="table-last-minute_details">
+          <div class="spots_avail">
+            {{trip.tourdetails.statuses.availability}} spots left
+          </div>
+          <button type="button" class="button_info" v-on:click="$emit('select-trip', trip)">More Info</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</script>

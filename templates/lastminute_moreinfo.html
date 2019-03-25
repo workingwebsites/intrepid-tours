@@ -1,0 +1,21 @@
+<script type="text/x-template" id="template-lastminute-moreinfo">
+  <div class="moreinfo-container" v-if="seltrip">
+    <div>
+      <button type="button" class="button_info" v-on:click="$emit('view-list')">&lt; Return to  List</button>
+    </div>
+
+    <h2>More Info for {{seltrip.tour.summary.productName}}</h2>
+    <div class="moreinfo-details">
+      <div class="moreinfo-description">
+        {{seltrip.tour.summary.description}}
+      </div>
+
+      <div class="moreinfo-map">
+        <img v-bind:src="seltrip.tour.summary.mapImage" >
+      </div>
+    </div>
+    <!--  <div>
+       <button type="button" class="button_info" v-on:click="$emit('call-to-action', seltrip)">Call To Action!</button>
+     </div> -->
+  </div>
+</script>
