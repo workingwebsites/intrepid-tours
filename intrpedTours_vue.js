@@ -36,7 +36,7 @@ Vue.component('lastminute-table', {
     },  // end getTrips
 
     formatDate: function(getDate) {
-    //Formats date.  Android doesn't like ddMMyyyy format, so have to do it manually.
+    //Formats date
       /*
       monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
       d = new Date(getDate);
@@ -46,6 +46,8 @@ Vue.component('lastminute-table', {
       var month = getDate.slice(2, 5);
       var year = getDate.slice(5, 9);
 
+      //DEBUG //
+       console.log(year);
        return day+' '+month+' '+year;
     },  // end sortTrips_Date
 
