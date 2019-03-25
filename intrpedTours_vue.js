@@ -36,10 +36,17 @@ Vue.component('lastminute-table', {
     },  // end getTrips
 
     formatDate: function(getDate) {
-    //Formats date
+    //Formats date.  Android doesn't like ddMMyyyy format, so have to do it manually.
+      /*
       monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
       d = new Date(getDate);
       return d.getDate() +' '+monthNames[d.getMonth()]+' '+d.getFullYear();
+      */
+      var day = getDate.slice(0, 2);
+      var month = getDate.slice(2, 5);
+      var year = getDate.slice(5, 9);
+
+       return day+' '+month+' '+year;
     },  // end sortTrips_Date
 
     formatPrice: function(value) {
