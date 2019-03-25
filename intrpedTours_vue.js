@@ -37,9 +37,18 @@ Vue.component('lastminute-table', {
 
     formatDate: function(getDate) {
     //Formats date
+      /*
       monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
       d = new Date(getDate);
       return d.getDate() +' '+monthNames[d.getMonth()]+' '+d.getFullYear();
+      */
+      var day = getDate.slice(0, 2);
+      var month = getDate.slice(2, 5);
+      var year = getDate.slice(5, 9);
+
+      //DEBUG //
+       console.log(year);
+       return day+' '+month+' '+year;
     },  // end sortTrips_Date
 
     formatPrice: function(value) {
