@@ -234,7 +234,7 @@ if($results['remain'] > 0){
   exit;
 }else{
   //DEBUG //
-  echo "<pre>";
+  echo "<pre> UPDATE FINISHED";
   print_r($results);
   echo "</pre>";
 }

@@ -1,7 +1,9 @@
 <?php
 /**
  * Plugin Name: Intrepid Tours
- * Description: Shows basic list of available tours.  Shortcode: 'lastminutetours';
+ * Description: Shows basic list of available tours.  Shortcode: [lastminutetours];  To manually update data got to: https://(yourwebsites.cm)/wp-content/plugins/intrepid-tours/get_feed.php
+
+ This will update the data.  It takes a while, half an hour to an hour.
  * Version:     1.0
  * Author:      Lisa Armstrong
  * Author URI:  https://workingwebsites.ca/

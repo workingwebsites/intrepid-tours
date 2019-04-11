@@ -35,6 +35,12 @@ The cron job should look like:
 
 wget -q -O /dev/null "https://{yourwebsite.com}/wp-content/plugins/intrepid-tours/get_feed.php"
 
+= TO GET THE INITIAL DATA FEED =
+The data won't be updated at first.  To load the initial data, go to:
+https://(yourwebsites.cm)/wp-content/plugins/intrepid-tours/get_feed.php
+
+This will update the data.  It takes a while, half an hour to an hour.
+
 == Frequently Asked Questions ==
 
 = Customizing List and Form =
