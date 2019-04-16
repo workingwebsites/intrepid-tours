@@ -35,7 +35,6 @@
  }
  add_action('wp_enqueue_scripts', 'intrpedTours_enqueue_axiosjs');
 
-
  //Get Vuejs script
  function intrpedTours_enqueue_intrpedjs() {
    //Register the script for future use.   Make sure it goes in the footer, after the DOM is loaded.
@@ -50,6 +49,7 @@ function intrpedTours_scTable($atts){
   //Load the script when the shortcode is called;
   wp_enqueue_script('intourVue');
   wp_enqueue_script('intourAxios');
+  wp_enqueue_script('intourMoment');
   wp_enqueue_script('intourIntrped');
 
   //Pass the path to vue

@@ -17,11 +17,12 @@ Vue.component('lastminute-table', {
         //Make it a proper JSON array if need be
         try {
           this.trips = JSON.parse('['+response.data+']');
+          vue = this;
 
           //Sort by date
           this.trips.sort(function(a,b) {
-            var dateA = date1 = new Date(a.tourdetails.summary.startDate);
-            var dateB = date1 = new Date(b.tourdetails.summary.startDate);
+            var dateA = new Date(vue.formatDate(a.tourdetails.summary.startDate));
+            var dateB = new Date(vue.formatDate(b.tourdetails.summary.startDate));
 
             if (dateA < dateB){return -1;}
             if (dateA > dateB){return 1;}
@@ -37,17 +38,12 @@ Vue.component('lastminute-table', {
 
     formatDate: function(getDate) {
     //Formats date
-      /*
-      monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
-      d = new Date(getDate);
-      return d.getDate() +' '+monthNames[d.getMonth()]+' '+d.getFullYear();
-      */
       var day = getDate.slice(0, 2);
       var month = getDate.slice(2, 5);
       var year = getDate.slice(5, 9);
 
        return day+' '+month+' '+year;
-    },  // end sortTrips_Date
+    },  // end formatDate
 
     formatPrice: function(value) {
       //Formats price
